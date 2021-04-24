@@ -1,0 +1,18 @@
+.nav {
+    grid-area: n;
+    background-color: #B8D0DB;
+    padding: 20px;
+}
+.item:not(:first-child) {
+    padding-top: 15px;
+}
+
+.item a {
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+}
+
+.item a.activeLink {
+    color: Tomato;
+}
