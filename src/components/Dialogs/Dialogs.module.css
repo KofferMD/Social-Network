@@ -1,0 +1,63 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 4fr 10fr;
+    grid-template-areas:
+    "dialog message"
+    "dialog input";
+}
+
+.dialogList {
+    grid-area: dialog;
+    background-color: tomato;
+}
+
+.dialogItem {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+.activeItem {
+    color: tomato;
+}
+
+.messageList {
+    grid-area: message;
+}
+
+.messageItem {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.dialogsInnerTextArea {
+    padding-left: 30px;
+    padding-top: 20px;
+    grid-area: input;
+    max-height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+.dialogsTextArea {
+    outline: none;
+    border: 1px solid rgba(185, 227, 229, .7);
+    resize: none;
+    width: 550px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.dialogsBtn {
+    height: 35px;
+    outline: none;
+    background-color: rgba(255, 179, 136, 1);
+    border: 1px solid rgba(185, 227, 229, .7);
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.dialogsBtn:hover {
+    transform: scale(.95);
+}

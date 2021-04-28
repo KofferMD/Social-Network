@@ -1,3 +1,21 @@
+ul,
+li{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    /*color: black;*/
+}
+
+.container {
+    width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
 .app-wrapper {
     background: rgba(146, 242, 255, 0.15);
 }
@@ -5,6 +23,7 @@
 .app-inner {
     display: grid;
     margin: 0 auto;
+    padding-top: 60px;
     width: 1200px;
     height: 100vh;
     grid-template-areas:
@@ -19,13 +38,9 @@
 
 .app-inner-content {
     grid-area: c;
-    background-color: #EDEEC5;
+    background: rgba(146, 242, 255, 0.15);
 }
 
-.app-inner-content img {
-    width: 950px;
-    height: 250px;
-}
 
 
 
