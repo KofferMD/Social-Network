@@ -2,21 +2,22 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./Message/Message";
+import {addMessageActionCreator, updateNewMessageTextCreator} from "../../redux/dialogsReducer";
 
 
 const Dialogs = (props) => {
     let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.message} id={d.id} />);
     let messagesElements = props.state.messages.map(m => <MessageItem message={m.message}/>);
-
+    let newMessageText = props.state.newMessageText;
     let newMessageElement = React.createRef();
 
-    let addMessage = () => {
-        props.addMessage();
+    let onSendMessageClick = () => {
+        props.dispatch(addMessageActionCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+    let onNewMessageChange = (e) => {
+        let message = e.target.value;
+        props.dispatch(updateNewMessageTextCreator(message));
     }
 
     return (
@@ -25,17 +26,19 @@ const Dialogs = (props) => {
                 {dialogsElements}
             </div>
             <div className={s.messageList}>
-                {messagesElements}
-            </div>
-            <div className={s.dialogsInnerTextArea}>
+               <div> {messagesElements} </div>
+                <div className={s.dialogsInnerTextArea}>
                 <textarea
-                    onChange={onMessageChange}
+                    placeholder="Напишите сообщение"
                     className={s.dialogsTextArea}
+                    onChange={onNewMessageChange}
                     ref={newMessageElement}
-                    value={props.state.newMessageText}
+                    value={newMessageText}
                 />
-                <button className={s.dialogsBtn} onClick={addMessage}>Отправить</button>
+                    <button className={s.dialogsBtn} onClick={onSendMessageClick}>Отправить</button>
+                </div>
             </div>
+
         </div>
     )
 }

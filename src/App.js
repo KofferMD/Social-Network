@@ -19,18 +19,16 @@ const App = (props) => {
                     <Navbar/>
                     <div className="app-inner-content">
                         <Route path='/News' render={() => <News/>}/>
-                        <Route path='/Dialogs'
-                               render={() => <Dialogs
-                                   state={props.state.dialogsPage}
-                                   updateNewMessageText={props.updateNewMessageText}
-                                   addMessage={props.addMessage}
-                               />}
-                        />
                         <Route path='/Profile'
                                render={() => <Profile
                                    profilePage={props.state.profilePage}
-                                   addPost={props.addPost}
-                                   updateNewPostText={props.updateNewPostText}
+                                   dispatch={props.dispatch}
+                               />}
+                        />
+                        <Route path='/Dialogs'
+                               render={() => <Dialogs
+                                   state={props.state.dialogsPage}
+                                   dispatch={props.dispatch}
                                />}
                         />
                         <Route path='/Books' render={() => <Books/>}/>
