@@ -5,7 +5,8 @@ import ProfileRightTop from "./ProfileRightTop/ProfileRightTop";
 
 
 const ProfileRightInner =(props) => {
-    let infoElements = props.info.map(i => <Info title={i.title} descr={i.descr} />);
+    debugger
+    let infoElements = props.info.info.map(i => <Info title={i.title} descr={i.descr} />);
 
     return (
         <div className={s.ProfileRightInner}>

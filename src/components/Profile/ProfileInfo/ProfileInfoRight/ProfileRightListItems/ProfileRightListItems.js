@@ -3,7 +3,8 @@ import s from "../../ProfileInfo.module.css";
 import Additional from "../Additional/Additional";
 
 const ProfileRightListItems =(props) => {
-    let additionalElements = props.additional.map(a => <Additional number={a.number} descr={a.descr} />)
+    debugger
+    let additionalElements = props.additional.additional.map(a => <Additional number={a.number} descr={a.descr} />)
 
     return (
         <div className={s.ProfileRightListItems}>

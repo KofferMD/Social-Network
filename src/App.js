@@ -3,12 +3,13 @@ import './App.css';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Dialogs from "./components/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
 import News from "./components/News/News";
 import Books from "./components/Books/Books";
 import Invests from "./components/Invests/Invests";
 import Settings from "./components/Settings/Settings";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import Users from "./components/Users/User";
 
 const App = (props) => {
     return (
@@ -19,18 +20,9 @@ const App = (props) => {
                     <Navbar/>
                     <div className="app-inner-content">
                         <Route path='/News' render={() => <News/>}/>
-                        <Route path='/Profile'
-                               render={() => <Profile
-                                   profilePage={props.state.profilePage}
-                                   dispatch={props.dispatch}
-                               />}
-                        />
-                        <Route path='/Dialogs'
-                               render={() => <Dialogs
-                                   state={props.state.dialogsPage}
-                                   dispatch={props.dispatch}
-                               />}
-                        />
+                        <Route path='/Profile' render={() => <Profile />}/>
+                        <Route path='/Dialogs' render={() => <DialogsContainer />}/>
+                        <Route path='/Users' render={() => <Users />}/>
                         <Route path='/Books' render={() => <Books/>}/>
                         <Route path='/Invests' render={() => <Invests/>}/>
                         <Route path='/Settings' render={() => <Settings/>}/>

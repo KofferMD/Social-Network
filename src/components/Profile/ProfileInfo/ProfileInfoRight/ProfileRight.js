@@ -1,20 +1,18 @@
 import React from 'react';
 import s from "../ProfileInfo.module.css";
-import ProfileRightInner from "./ProfileRightInner/ProfileRightInner";
-import ProfileRightListItems from "./ProfileRightListItems/ProfileRightListItems";
-import MyPosts from "./MyPosts/MyPosts";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import ProfileRightInnerContainer from "./ProfileRightInner/ProfileRightInnerContainer";
+import ProfileRightListItemsContainer from "./ProfileRightListItems/ProfileRightListItemsContainer";
 
 
 const ProfileRight = (props) => {
+    // let state = props.store.getState().profilePage;info={state.info}additional={state.additional}
+
     return (
         <div className={s.ProfileRight}>
-            <ProfileRightInner info={props.info}/>
-            <ProfileRightListItems additional={props.additional}/>
-            <MyPosts
-                posts={props.posts}
-                newPostText={props.newPostText}
-                dispatch={props.dispatch}
-            />
+            <ProfileRightInnerContainer />
+            <ProfileRightListItemsContainer />
+            <MyPostsContainer />
         </div>
     )
 }
