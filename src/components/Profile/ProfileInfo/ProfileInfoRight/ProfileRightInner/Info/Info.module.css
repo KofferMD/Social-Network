@@ -1,0 +1,13 @@
+.ProfileRightInfoItem {
+    margin-top: 20px;
+}
+
+.ProfileRightTitle {
+    color: rgba(0,0,0, .8);
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.ProfileInfoDescr{
+    font-size: 15px;
+}

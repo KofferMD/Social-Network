@@ -1,18 +1,14 @@
 import React from 'react';
-import s from "../ProfileInfo.module.css";
-import MyPostsContainer from "./MyPosts/MyPostsContainer";
+import s from "./ProfileRight.module.css";
 import ProfileRightInnerContainer from "./ProfileRightInner/ProfileRightInnerContainer";
 import ProfileRightListItemsContainer from "./ProfileRightListItems/ProfileRightListItemsContainer";
 
 
 const ProfileRight = (props) => {
-    // let state = props.store.getState().profilePage;info={state.info}additional={state.additional}
-
     return (
         <div className={s.ProfileRight}>
             <ProfileRightInnerContainer />
-            <ProfileRightListItemsContainer />
-            <MyPostsContainer />
+            {/*<ProfileRightListItemsContainer />*/}
         </div>
     )
 }

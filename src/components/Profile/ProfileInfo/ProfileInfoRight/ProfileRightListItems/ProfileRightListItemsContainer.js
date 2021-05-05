@@ -4,7 +4,7 @@ import ProfileRightListItems from "./ProfileRightListItems";
 
 let mapStateToProps = (state) => {
     return {
-        additional: state.profilePage
+        additional: state.profilePage.additional
     }
 }
 

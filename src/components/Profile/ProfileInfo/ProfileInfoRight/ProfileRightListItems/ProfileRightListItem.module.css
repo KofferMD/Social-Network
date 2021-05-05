@@ -1,0 +1,15 @@
+.ProfileRightListItems {
+    background-color: #FFC369;
+    border-radius: 5px;
+}
+
+.ProfileRightList {
+    padding: 10px;
+}
+
+.ProfileRightList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

@@ -3,6 +3,7 @@ import s from './ProfileInfo.module.css';
 import ProfileInfoLeft from "./ProfileInfoLeft/ProfileInfoLeft";
 import ProfileRight from "./ProfileInfoRight/ProfileRight";
 import ProfileInfoFriendsContainer from "./ProfileInfoFriends/ProfileInfoFriendsContainer";
+import MyPostsContainer from "./ProfileInfoRight/MyPosts/MyPostsContainer";
 
 
 const ProfileInfo = (props) => {
@@ -10,8 +11,9 @@ const ProfileInfo = (props) => {
         <div className={s.ProfileInfoWrapper}>
             <div className={s.ProfileInfoInner}>
                 <ProfileInfoLeft/>
-                <ProfileInfoFriendsContainer/>
                 <ProfileRight />
+                <ProfileInfoFriendsContainer/>
+                <MyPostsContainer />
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import ProfileRightInner from "./ProfileRightInner";
 
 let mapStateToProps = (state) => {
     return {
-        info: state.profilePage
+        info: state.profilePage.info
     }
 }
 

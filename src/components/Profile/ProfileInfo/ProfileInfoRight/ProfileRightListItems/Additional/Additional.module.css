@@ -1,0 +1,11 @@
+
+.ProfileRightItem:not(:last-child) {
+    margin-right: 60px;
+}
+.ProfileRightItemLink {
+    color: rgba(0,0,0,.8);
+}
+.ProfileRightItemNumber {
+    font-size: 23px;
+}
+

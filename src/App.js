@@ -9,7 +9,7 @@ import Books from "./components/Books/Books";
 import Invests from "./components/Invests/Invests";
 import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import Users from "./components/Users/User";
+import UsersContainer from "./components/Users/UsersContainer";
 
 const App = (props) => {
     return (
@@ -22,7 +22,7 @@ const App = (props) => {
                         <Route path='/News' render={() => <News/>}/>
                         <Route path='/Profile' render={() => <Profile />}/>
                         <Route path='/Dialogs' render={() => <DialogsContainer />}/>
-                        <Route path='/Users' render={() => <Users />}/>
+                        <Route path='/Users' render={() => <UsersContainer />}/>
                         <Route path='/Books' render={() => <Books/>}/>
                         <Route path='/Invests' render={() => <Invests/>}/>
                         <Route path='/Settings' render={() => <Settings/>}/>

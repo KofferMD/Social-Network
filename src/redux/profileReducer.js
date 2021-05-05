@@ -26,12 +26,12 @@ let initialState = {
         },
         {
             id: 2,
-            title: "Обо мне",
+            title: "Любимые передачи",
             descr: "Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy."
         },
         {
             id: 3,
-            title: "Обо мне",
+            title: "Любимые группы/артисты",
             descr: "Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge."
         }
     ],

@@ -1,10 +1,10 @@
 import React from 'react';
-import s from "../../ProfileInfo.module.css";
-import Additional from "../Additional/Additional";
+import s from "./ProfileRightListItem.module.css";
+import Additional from "./Additional/Additional";
 
 const ProfileRightListItems =(props) => {
-    debugger
-    let additionalElements = props.additional.additional.map(a => <Additional number={a.number} descr={a.descr} />)
+
+    let additionalElements = props.additional.map(a => <Additional number={a.number} descr={a.descr} key={a.id} />)
 
     return (
         <div className={s.ProfileRightListItems}>

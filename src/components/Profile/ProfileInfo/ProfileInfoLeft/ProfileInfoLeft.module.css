@@ -1,0 +1,58 @@
+.ProfileInfoLeft {
+    grid-area: left;
+    background-color: #FFC369;
+    border-radius: 5px;
+    max-height: 304px;
+}
+
+.ProfileInfoAva {
+    border-radius: 5px;
+    position: relative;
+    min-height: 222px;
+}
+
+.ProfileInfoAvaImg {
+    width: 200px;
+    height: 200px;
+    margin: 20px 20px 0 20px;
+    border: 1px solid rgba(255,255,255,0);
+    border-radius: 5px;
+}
+
+.ProfileInfoChange {
+    position: absolute;
+    cursor: pointer;
+    width: 200px;
+    height: 16%;
+    top: 174px;
+    left: 20px;
+    background-color: rgba(0,0,0,.3);
+    color: rgba(255,255,255,.8);
+    text-align: center;
+    padding-top: 11px;
+    transition: all .25s ease-in-out;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.ProfileInfoAva:hover .ProfileInfoChange{
+    opacity: 1;
+}
+
+.ProfileInfoSettings {
+    width: 200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.ProfileInfoSettingsLink {
+    background-color: rgba(255, 179, 136, 1);
+    border-radius: 5px;
+    color: rgba(0,0,0, .7);
+    padding: 5px 46px;
+    transition: all .3s;
+}
+
+.ProfileInfoSettingsLink:hover {
+    font-size: 15px;
+}

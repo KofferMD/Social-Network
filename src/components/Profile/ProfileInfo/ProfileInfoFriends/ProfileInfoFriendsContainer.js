@@ -4,8 +4,8 @@ import ProfileInfoFriends from "./ProfileInfoFriends";
 
 let mapStateToProps = (state) => {
     return {
-        friends: state.profilePage,
-        friendsOnline: state.profilePage
+        friends: state.profilePage.friends,
+        friendsOnline: state.profilePage.friendsOnline
     }
 }
 

@@ -1,13 +1,11 @@
 import React from 'react';
-import s from '../../../ProfileInfo.module.css';
+import s from './Info.module.css';
 
 const Info = (props) => {
     return (
-        <div>
+        <div className={s.ProfileRightInfoItem}>
             <div className={s.ProfileRightTitle}>{props.title}</div>
-            <div className={s.ProfileInfoDescr}>
-                {props.descr}
-            </div>
+            <div className={s.ProfileInfoDescr}>{props.descr}</div>
         </div>
     )
 }

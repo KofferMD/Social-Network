@@ -1,0 +1,53 @@
+.userWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 30px;
+    background: rgba(255, 125, 107, 1);
+    border-radius: 5px;
+    padding: 10px;
+    color: rgba(0,0,0, .8);
+}
+
+.userLeft {
+    min-width: 33%;
+}
+
+.userPhotoName {
+    display: flex;
+    align-items: center;
+}
+
+.userFollow {
+    width: 100px;
+    height: 25px;
+    border: 1px solid rgba(182, 229, 255, 1);
+    border-radius: 3px;
+    background: rgba(182, 229, 255, 1);
+    font-size: 15px;
+    transition: all .4s ease-in-out;
+}
+
+.userUnfollow {
+    width: 100px;
+    height: 25px;
+    border: 1px solid rgba(235, 192, 255, 1);
+    border-radius: 3px;
+    background: rgba(235, 192, 255, 1);
+    font-size: 15px;
+    transition: all .4s ease-in-out;
+}
+
+.userPhoto {
+    width: 50px;
+    height: 50px;
+}
+
+.userName {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.userRight {
+    min-width: 13%;
+}

@@ -1,0 +1,8 @@
+.ProfileRight {
+    grid-area: right;
+    background-color: #FFC369;
+    border-radius: 5px;
+    width: 717px;
+    margin-left: 10px;
+    position: relative;
+}

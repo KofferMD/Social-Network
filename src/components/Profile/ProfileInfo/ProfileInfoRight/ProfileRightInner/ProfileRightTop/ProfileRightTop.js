@@ -1,5 +1,5 @@
 import React from 'react';
-import s from "../../../ProfileInfo.module.css";
+import s from "./ProfileRightTop.module.css";
 
 const ProfileRightTop =() => {
     return (

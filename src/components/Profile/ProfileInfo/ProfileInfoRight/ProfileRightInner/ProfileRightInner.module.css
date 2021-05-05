@@ -1,0 +1,35 @@
+.ProfileRightInner {
+    padding: 20px;
+}
+
+.infoElements {
+    margin-top: 20px;
+}
+
+.divider {
+    width: 588px;
+    height: 1px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 35%;
+    left: 15.35%;
+}
+
+.divider1 {
+    width: 511px;
+    height: 1px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 58%;
+    left: 26%;
+}
+
+.divider2 {
+    width: 454px;
+    height: 1px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 81%;
+    left: 34%;
+}
+

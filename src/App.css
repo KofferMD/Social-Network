@@ -7,17 +7,12 @@ li{
 
 a {
     text-decoration: none;
-    /*color: black;*/
 }
 
 .container {
     width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
-}
-
-.app-wrapper {
-    background: rgba(146, 242, 255, 0.15);
 }
 
 .app-inner {
@@ -34,11 +29,10 @@ a {
     /* grid-gap: 10px; */
 }
 
-
-
 .app-inner-content {
     grid-area: c;
-    background: rgba(146, 242, 255, 0.15);
+    height: 100%;
+    background: rgba(146, 242, 255, .2);
 }
 
 
