@@ -1,3 +1,21 @@
+.userList {
+    display: flex;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.userListItem {
+    background-color: tomato;
+    border-radius: 3px;
+}
+
+span {
+    padding: 0 10px;
+    transition: all .3s;
+}
+
 .userWrapper {
     display: flex;
     justify-content: space-between;

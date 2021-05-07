@@ -1,9 +1,18 @@
+import {act} from "@testing-library/react";
+
 const FOLLOW = 'FOLLOW',
     UNFOLLOW = 'UNFOLLOW',
-    SET_USERS = 'SET_USERS';
+    SET_USERS = 'SET_USERS',
+    SET_CURRENT_PAGE = 'SET_CURRENT_PAGE',
+    SET_TOTAL_USERS_COUNT = ' SET_TOTAL_USERS_COUNT',
+    TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 
 let initialState = {
-    users: []
+    users: [],
+    pageSize: 10,
+    totalUserCount: 1,
+    currentPage: 1,
+    isFetching: true
 };
 
 const usersReducers = (state = initialState, action) => {
@@ -30,20 +39,32 @@ const usersReducers = (state = initialState, action) => {
                     return u;
                 })
             }
-
         case SET_USERS: {
-            return {
-                ...state,
-                users: [...state.users, ...action.users]
-            }
+            return {...state, users: action.users}
         }
+
+        case SET_CURRENT_PAGE: {
+            return {...state, currentPage: action.currentPage}
+        }
+
+        case SET_TOTAL_USERS_COUNT: {
+            return {...state, totalUserCount: action.count}
+        }
+
+        case TOGGLE_IS_FETCHING: {
+            return {...state, isFetching: action.isFetching}
+        }
+
         default:
             return state;
     }
 }
 
-export let followAC = (userId) => ({type: FOLLOW, userId});
-export let unfollowAC = (userId) => ({type: UNFOLLOW, userId});
-export let setUsersAC = (users) => ({type: SET_USERS, users})
+export let follow = (userId) => ({type: FOLLOW, userId});
+export let unfollow = (userId) => ({type: UNFOLLOW, userId});
+export let setUsers = (users) => ({type: SET_USERS, users});
+export let setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export let setTotalUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, count : totalUsersCount});
+export let toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 export default usersReducers;

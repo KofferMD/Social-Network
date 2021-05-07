@@ -1,20 +1,25 @@
-import React from 'react';
-import s from './User.module.css'
-import * as axios from 'axios'
-import userIcon from '../../assets/images/userIcon.png'
+import React from "react";
+import s from "./User.module.css";
+import userIcon from "../../assets/images/userIcon.png";
 
+let Users = (props) => {
+    let pagesCount = Math.ceil(props.totalUserCount / props.pageSize);
 
-const Users = (props) => {
+    let pages = [];
 
-    if (props.users.length === 0) {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                props.setUsers(response.data.items);
-            });
+    for (let i = 1; i <= 20; i++) {
+        pages.push(i);
     }
-
     return (
         <div>
+            <div className={s.userList}>
+                {pages.map(p => {
+                    return <span className={props.currentPage === p && s.userListItem}
+                                 onClick={() => {
+                                     props.onPageChanged(p)
+                                 }}>{p}</span>
+                })}
+            </div>
             {
                 props.users.map(u => <div key={u.id}>
                         <div className={s.userWrapper}>
