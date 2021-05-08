@@ -6,7 +6,7 @@ const ProfileInfoLeft = (props) => {
         <div className={s.ProfileInfoLeft}>
             <div className={s.ProfileInfoAva}>
                 <img className={s.ProfileInfoAvaImg}
-                     src="https://www.film.ru/sites/default/files/styles/thumb_600x680/public/articles/1451977-1173390.jpeg"
+                     src={props.profile.photos.large}
                      alt=""/>
                 <a className={s.ProfileInfoChange}>Обновить фотографию</a>
             </div>

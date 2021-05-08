@@ -4,68 +4,37 @@
     position: fixed;
     width: 100%;
     height: 60px;
-    background-color: #fff;
-    border-bottom: 1px solid rgba(231, 232, 236, 0.3);
+    background-color: tomato;
+    /*border-bottom: 1px solid rgba(231, 232, 236, 0.3);*/
     z-index: 1;
+}
+
+.headerContainer {
+    width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
 }
 
 .headerNav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
-
-.headerItemIcon {}
 
 .headerItemIconImg {
     width: 50px;
     height: 50px;
-    margin-top: 5px;
-}
-
-.headerItemNameTitle {
-    font-size: 20px;
-    font-weight: normal;
+    padding-top: 5px;
     padding-left: 5px;
 }
 
-.headerItemName{}
-
-.headerItemInput{
-    margin-right: 600px;
-}
-
-.headerItemInputSearch {
-    margin-left: 70px;
-    border-radius: 8px;
-    background-color: #EDEDED;
-    background-image: url('');
-    border: none;
-    outline: none;
-    width: 200px;
-    height: 30px;
+.headerItemProfileLink {
+    font-size: 17px;
     padding-left: 10px;
+    color: rgba(255,255,255, 0.8);
+    cursor: pointer;
 }
 
-.headerItemProfile{
-
-}
-
-.headerItemProfileLink{
-    display: flex;
-    align-items: center;
-}
-
-.headerItemProfileName {
-    font-size: 18px;
-    color: black;
-    padding-right: 10px;
-}
-
-.headerItemProfileLinkImg {
-    width: 50px;
-    height: 50px;
-}
 
 
 

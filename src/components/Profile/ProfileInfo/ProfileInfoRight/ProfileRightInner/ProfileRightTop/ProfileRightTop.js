@@ -1,11 +1,11 @@
 import React from 'react';
 import s from "./ProfileRightTop.module.css";
 
-const ProfileRightTop =() => {
+const ProfileRightTop = (props) => {
     return (
         <div className={s.ProfileRightTop}>
             <div className={s.ProfileInfoName}>
-                Николай Винокуров
+                {props.profile.fullName}
             </div>
             <div className={s.ProfileRightPostDate}>
                 <time className={s.ProfileRightPublished} dateTime="25-4-2021">

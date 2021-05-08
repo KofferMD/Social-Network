@@ -7,7 +7,7 @@ import ProfileRightListItemsContainer from "./ProfileRightListItems/ProfileRight
 const ProfileRight = (props) => {
     return (
         <div className={s.ProfileRight}>
-            <ProfileRightInnerContainer />
+            <ProfileRightInnerContainer profile={props.profile}/>
             {/*<ProfileRightListItemsContainer />*/}
         </div>
     )

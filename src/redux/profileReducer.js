@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST',
-    UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+    UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
+    SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
     friends: [
@@ -22,18 +23,19 @@ let initialState = {
         {
             id: 1,
             title: "Обо мне",
-            descr: "Hi, I’m James, I’m 36 and I work as a Digital Designer for the “Daydreams” Agency in Pier 56."
-        },
-        {
-            id: 2,
-            title: "Любимые передачи",
-            descr: "Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy."
-        },
-        {
-            id: 3,
-            title: "Любимые группы/артисты",
-            descr: "Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge."
+            descr: "",
+            social: "Социальные сети",
         }
+        // {
+        //     id: 2,
+        //     title: "Любимые передачи",
+        //     descr: "Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy."
+        // },
+        // {
+        //     id: 3,
+        //     title: "Любимые группы/артисты",
+        //     descr: "Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge."
+        // }
     ],
     additional: [
         {id: 1, number: 70, descr: "друзей"},
@@ -47,7 +49,8 @@ let initialState = {
         {id: 3, message: "Good for you!", likesCount: 23},
         {id: 4, message: "Good for you!", likesCount: 43}
     ],
-    newPostText: ''
+    newPostText: '',
+    profile: null
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -63,14 +66,17 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 newPostText: '',
                 posts: [...state.posts, {id: 5, message: newPost, likesCount: 0}]
-            };
+            }
+
+        case SET_USER_PROFILE:
+            return {...state, profile: action.profile}
         default:
             return state;
     }
 }
 
 export let addPost = () => ({type: ADD_POST});
-export let updateNewPostText = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export let setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export let updateNewPostText = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
 export default profileReducer;
