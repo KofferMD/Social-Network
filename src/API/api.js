@@ -23,7 +23,7 @@ export const usersAPI = {
         return instance.get(`profile/` + userId);
     },
     getAuth () {
-        return instance.get(`https://social-network.samuraijs.com/api/1.0/auth/me`);
+        return instance.get(`auth/me`);
     }
 }
 
