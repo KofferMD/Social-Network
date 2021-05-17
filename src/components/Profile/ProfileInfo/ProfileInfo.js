@@ -8,6 +8,7 @@ import Preloader from "../../common/preloader/Preloader";
 
 
 const ProfileInfo = (props) => {
+
     if (!props.profile) {
         return <Preloader/>
     }
@@ -15,7 +16,7 @@ const ProfileInfo = (props) => {
         <div className={s.ProfileInfoWrapper}>
             <div className={s.ProfileInfoInner}>
                 <ProfileInfoLeft profile={props.profile}/>
-                <ProfileRight profile={props.profile}/>
+                <ProfileRight profile={props.profile} status={props.status} updateStatus={props.updateStatus}/>
                 <ProfileInfoFriendsContainer/>
                 <MyPostsContainer />
             </div>

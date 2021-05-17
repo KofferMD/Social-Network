@@ -1,0 +1,26 @@
+.profileStatus {
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0, .2);
+}
+
+.profileStatusInnerSpan {
+    width: 100%;
+    transition: all .3s ease-in;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profileStatusInnerSpan:hover {
+    background-color: rgba(192, 192, 192, .8);
+}
+
+.profileStatusSpan {
+    padding-left: 5px;
+}
+
+.profileStatusInput {
+    outline: none;
+    border: none;
+    padding: 3px;
+    border-radius: 4px;
+}

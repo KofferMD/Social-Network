@@ -1,17 +1,17 @@
 import React from 'react';
 import s from "./ProfileRightTop.module.css";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
+
 
 const ProfileRightTop = (props) => {
     return (
         <div className={s.ProfileRightTop}>
-            <div className={s.ProfileInfoName}>
-                {props.profile.fullName}
+            <div className={s.ProfileRightTopNameInner}>
+                <div className={s.ProfileInfoName}>
+                    {props.profile.fullName}
+                </div>
             </div>
-            <div className={s.ProfileRightPostDate}>
-                <time className={s.ProfileRightPublished} dateTime="25-4-2021">
-                    Заходил два часа назад
-                </time>
-            </div>
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
         </div>
     )
 }

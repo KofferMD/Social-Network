@@ -12,7 +12,7 @@ const Header = (props) => {
                              src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3169-thumb.png" alt=""/>
                     </div>
                     { props.isAuth ? props.login
-                        : <NavLink to={'/login'} className={s.headerItemProfileLink}>Войти</NavLink>}
+                        : <NavLink to='/login' className={s.headerItemProfileLink}>Войти</NavLink>}
                 </div>
             </div>
         </header>

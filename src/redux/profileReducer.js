@@ -1,8 +1,8 @@
-import {usersAPI} from "../API/api";
+import {profileAPI, usersAPI} from "../API/api";
 
 const ADD_POST = 'ADD-POST',
-    UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT',
-    SET_USER_PROFILE = 'SET_USER_PROFILE';
+    SET_USER_PROFILE = 'SET_USER_PROFILE',
+    SET_STATUS = 'SET_STATUS';
 
 let initialState = {
     friends: [
@@ -24,20 +24,10 @@ let initialState = {
     info: [
         {
             id: 1,
-            title: "Обо мне",
+            title: "Обо мне :",
             descr: "",
-            social: "Социальные сети",
+            social: "Социальные сети :",
         }
-        // {
-        //     id: 2,
-        //     title: "Любимые передачи",
-        //     descr: "Breaking Good, RedDevil, People of Interest, The Running Dead, Found, American Guy."
-        // },
-        // {
-        //     id: 3,
-        //     title: "Любимые группы/артисты",
-        //     descr: "Iron Maid, DC/AC, Megablow, The Ill, Kung Fighters, System of a Revenge."
-        // }
     ],
     additional: [
         {id: 1, number: 70, descr: "друзей"},
@@ -51,47 +41,55 @@ let initialState = {
         {id: 3, message: "Good for you!", likesCount: 23},
         {id: 4, message: "Good for you!", likesCount: 43}
     ],
-    newPostText: '',
-    profile: null
+    profile: null,
+    status: ''
 }
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_POST_TEXT:
-            return {
-                ...state,
-                newPostText: action.newText
-            }
         case ADD_POST:
-            let newPost = state.newPostText;
+            let newPost = action.newPostText;
             return {
                 ...state,
-                newPostText: '',
                 posts: [...state.posts, {id: 5, message: newPost, likesCount: 0}]
             }
 
+        case SET_STATUS:
+            return {...state, status: action.status}
+
         case SET_USER_PROFILE:
             return {...state, profile: action.profile}
+
         default:
             return state;
     }
 }
 
-export let addPost = () => ({type: ADD_POST});
+export let addPost = (newPostText) => ({type: ADD_POST, newPostText});
 export let setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
-export let updateNewPostText = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export let setStatus = (status) => ({type: SET_STATUS, status})
 
-export const getProfile = () => {
-
-    return (dispatch) => {
-        let userId = this.props.match.params.userId;
-        if (!userId) {
-            userId = 16910;
-        }
-        usersAPI.getProfile(userId).then(response => {
-            dispatch(setUserProfile(response.data));
-        })
-    }
+export const getUserProfile = (userId) => (dispatch) => {
+    usersAPI.getProfile(userId).then(response => {
+        dispatch(setUserProfile(response.data));
+    });
 }
+
+export const getStatus = (userId) => (dispatch) => {
+    profileAPI.getStatus(userId)
+        .then(response => {
+            dispatch(setStatus(response.data));
+        });
+}
+
+export const updateStatus = (status) => (dispatch) => {
+    profileAPI.updateStatus(status)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setStatus(status));
+            }
+        });
+}
+
 
 export default profileReducer;
